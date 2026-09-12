@@ -148,3 +148,98 @@ body {
     background-position: 0 0;
   }
 }
+
+.has-custom-cursor,
+.has-custom-cursor *,
+.has-custom-cursor a,
+.has-custom-cursor button {
+  cursor: none;
+}
+
+.cursor-arrow,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  will-change: transform;
+}
+
+.cursor-visible .cursor-arrow,
+.cursor-visible .cursor-ring {
+  opacity: 1;
+}
+
+.cursor-arrow svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  transform: translate(-3px, -3px);
+  transform-origin: 3px 3px;
+  filter: drop-shadow(0 0 12px rgba(124, 58, 237, 0.85));
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cursor-arrow path {
+  fill: #8d51f4;
+  stroke: #8d51f4;
+  transition:
+    fill 0.28s ease,
+    stroke 0.28s ease;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16777200px;
+  background: rgba(124, 58, 237, 0.04);
+  backdrop-filter: blur(1px);
+}
+
+.cursor-ring {
+  transition:
+    opacity 0.25s ease,
+    width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.cursor-hovering .cursor-ring {
+  width: 64px;
+  height: 64px;
+  border-color: rgba(141, 81, 244, 0.85);
+  background: rgba(124, 58, 237, 0.12);
+  box-shadow: 0 0 60px -12px rgba(124, 58, 237, 0.65);
+}
+
+.cursor-hovering .cursor-arrow svg {
+  transform: translate(-3px, -3px) scale(0.8);
+}
+
+.cursor-hovering .cursor-arrow path {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.cursor-pressed .cursor-ring {
+  width: 28px;
+  height: 28px;
+  border-color: rgba(141, 81, 244, 0.9);
+  background: rgba(124, 58, 237, 0.2);
+}
+
+.cursor-pressed .cursor-arrow svg {
+  transform: translate(-3px, -3px) scale(0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-arrow svg,
+  .cursor-ring {
+    transition: opacity 0.2s ease;
+  }
+}

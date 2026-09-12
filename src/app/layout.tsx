@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, JetBrains_Mono } from "next/font/google";
+import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className="bg-[#070707] text-white antialiased"
       >
         {children}
+        <CustomCursor />
       </body>
     </html>
   );
