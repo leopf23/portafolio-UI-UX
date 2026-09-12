@@ -31,7 +31,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-[#070707] text-white antialiased">{children}</body>
+      <body
+        suppressHydrationWarning
+        className="bg-[#070707] text-white antialiased"
+      >
+        {children}
+      </body>
     </html>
   );
 }

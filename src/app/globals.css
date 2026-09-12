@@ -116,6 +116,9 @@ body {
 .hero-line-3 {
   animation-delay: 0.42s;
 }
+.hero-line-image {
+  animation-delay: 0.55s;
+}
 
 .hero-line-accent {
   background-image: linear-gradient(
