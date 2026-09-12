@@ -25,9 +25,9 @@ export default function Hero() {
           </div>
 
           <h1 className="font-sans font-semibold text-[36px] sm:text-[52px] lg:text-[64px] xl:text-[76px] leading-[1.08] xl:leading-[86.6px] tracking-[-1.5px] sm:tracking-[-2.4px] xl:tracking-[-3.52px]">
-            <span className="block text-[#8d51f4]">UI/UX Designer</span>
-            <span className="block text-white">Creating Digital</span>
-            <span className="block text-white">Experiences</span>
+            <span className="hero-line hero-line-1 hero-line-accent block">UI/UX Designer</span>
+            <span className="hero-line hero-line-2 block text-white">Creating Digital</span>
+            <span className="hero-line hero-line-3 block text-white">Experiences</span>
           </h1>
 
           <p className="max-w-xl font-sans font-normal text-[#a1a1aa] text-[16px] sm:text-[17px] leading-[1.6]">
