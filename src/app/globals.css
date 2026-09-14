@@ -1,8 +1,58 @@
 @import "tailwindcss";
 
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
 :root {
-  --background: #070707;
-  --foreground: #ffffff;
+  --c-bg: #070707;
+  --c-surface: #111111;
+  --c-ink: #ffffff;
+  --c-ink-muted: #a1a1aa;
+  --c-ink-soft: rgba(255, 255, 255, 0.85);
+  --c-border: rgba(255, 255, 255, 0.06);
+  --c-border-strong: rgba(255, 255, 255, 0.1);
+  --c-overlay-1: rgba(255, 255, 255, 0.02);
+  --c-overlay-2: rgba(255, 255, 255, 0.06);
+  --c-chip: rgba(7, 7, 7, 0.4);
+  --c-wash: rgba(17, 17, 17, 0.4);
+  --c-nav-glass: rgba(22, 22, 22, 0.6);
+  --c-menu-bg: rgba(17, 17, 17, 0.95);
+  --c-cta-bg: #ffffff;
+  --c-cta-ink: #070707;
+  --c-stroke: rgba(255, 255, 255, 0.15);
+  --c-grid-line: rgba(255, 255, 255, 0.04);
+  --c-hero-accent-1: #8d51f4;
+  --c-hero-accent-2: #e0c9ff;
+  --c-hero-glow: rgba(141, 81, 244, 0.55);
+  --c-cursor-ring-border: rgba(255, 255, 255, 0.25);
+  --c-cursor-ring-bg: rgba(124, 58, 237, 0.04);
+
+  --background: var(--c-bg);
+  --foreground: var(--c-ink);
+}
+
+[data-theme="light"] {
+  --c-bg: #f6f6f8;
+  --c-surface: #ffffff;
+  --c-ink: #0d0d0f;
+  --c-ink-muted: #63636e;
+  --c-ink-soft: rgba(13, 13, 15, 0.75);
+  --c-border: rgba(15, 15, 20, 0.08);
+  --c-border-strong: rgba(15, 15, 20, 0.14);
+  --c-overlay-1: rgba(15, 15, 20, 0.035);
+  --c-overlay-2: rgba(15, 15, 20, 0.055);
+  --c-chip: rgba(15, 15, 20, 0.045);
+  --c-wash: rgba(15, 15, 20, 0.03);
+  --c-nav-glass: rgba(255, 255, 255, 0.72);
+  --c-menu-bg: rgba(255, 255, 255, 0.98);
+  --c-cta-bg: #0d0d0f;
+  --c-cta-ink: #ffffff;
+  --c-stroke: rgba(15, 15, 20, 0.14);
+  --c-grid-line: rgba(15, 15, 20, 0.035);
+  --c-hero-accent-1: #7c3aed;
+  --c-hero-accent-2: #b98bff;
+  --c-hero-glow: rgba(124, 58, 237, 0.35);
+  --c-cursor-ring-border: rgba(15, 15, 20, 0.25);
+  --c-cursor-ring-bg: rgba(124, 58, 237, 0.07);
 }
 
 @theme inline {
@@ -14,14 +64,33 @@
 }
 
 html {
-  background: var(--background);
+  background: var(--c-bg);
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--c-bg);
+  color: var(--c-ink);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  header,
+  section,
+  footer,
+  div,
+  p,
+  span,
+  a,
+  button,
+  nav,
+  svg,
+  path {
+    transition-property: background-color, border-color, color, fill, stroke, box-shadow, opacity;
+    transition-duration: 450ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 @keyframes skills-marquee {
@@ -87,7 +156,7 @@ body {
     text-shadow: 0 0 0 rgba(141, 81, 244, 0);
   }
   50% {
-    text-shadow: 0 0 40px rgba(141, 81, 244, 0.55);
+    text-shadow: 0 0 40px var(--c-hero-glow);
   }
 }
 
@@ -123,9 +192,9 @@ body {
 .hero-line-accent {
   background-image: linear-gradient(
     100deg,
-    #8d51f4 40%,
-    #e0c9ff 50%,
-    #8d51f4 60%
+    var(--c-hero-accent-1) 40%,
+    var(--c-hero-accent-2) 50%,
+    var(--c-hero-accent-1) 60%
   );
   background-size: 250% 100%;
   background-clip: text;
@@ -194,9 +263,9 @@ body {
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--c-cursor-ring-border);
   border-radius: 16777200px;
-  background: rgba(124, 58, 237, 0.04);
+  background: var(--c-cursor-ring-bg);
   backdrop-filter: blur(1px);
 }
 

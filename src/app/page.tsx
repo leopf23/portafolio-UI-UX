@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="bg-[#070707] content-stretch flex flex-col items-center relative w-full overflow-x-clip">
+      <main className="bg-[var(--c-bg)] content-stretch flex flex-col items-center relative w-full overflow-x-clip">
         <Hero />
         <RevealOnScroll>
           <SkillsTicker />

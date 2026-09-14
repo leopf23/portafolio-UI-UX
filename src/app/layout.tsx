@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, JetBrains_Mono } from "next/font/google";
 import CustomCursor from "@/components/ui/CustomCursor";
+import { LocaleProvider } from "@/context/LocaleContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,10 +36,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body
         suppressHydrationWarning
-        className="bg-[#070707] text-white antialiased"
+        className="bg-[var(--c-bg)] text-[var(--c-ink)] antialiased"
       >
-        {children}
-        <CustomCursor />
+        <ThemeProvider>
+          <LocaleProvider>
+            {children}
+            <CustomCursor />
+          </LocaleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
