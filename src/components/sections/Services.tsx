@@ -7,7 +7,7 @@ const icons = [
   "/images/icon-service-frontend.svg",
   "/images/icon-service-webdesign.svg",
   "/images/icon-service-designsystems.svg",
-  "/images/icon-service-brand.svg",
+  "/images/icon-service-idea.svg",
   "/images/icon-service-strategy.svg",
 ];
 

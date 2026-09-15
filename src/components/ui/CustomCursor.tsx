@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/context/LocaleContext";
 
 const HOVER_SELECTOR =
   'a, button, [role="button"], label, summary, input, textarea, select, [data-cursor="hover"]';
+const VIEW_SELECTOR = '[data-cursor="view"]';
 
 export default function CustomCursor() {
+  const { t } = useLocale();
   const [enabled, setEnabled] = useState(false);
   const arrowRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
@@ -55,7 +58,9 @@ export default function CustomCursor() {
 
       const target = event.target as Element | null;
       const overInteractive = Boolean(target?.closest?.(HOVER_SELECTOR));
+      const overView = Boolean(target?.closest?.(VIEW_SELECTOR));
       root.classList.toggle("cursor-hovering", overInteractive);
+      root.classList.toggle("cursor-view", overView);
     };
 
     const onPointerDown = () => root.classList.add("cursor-pressed");
@@ -79,6 +84,7 @@ export default function CustomCursor() {
         "has-custom-cursor",
         "cursor-visible",
         "cursor-hovering",
+        "cursor-view",
         "cursor-pressed",
       );
     };
@@ -88,7 +94,9 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={ringRef} aria-hidden className="cursor-ring" />
+      <div ref={ringRef} aria-hidden className="cursor-ring">
+        <span className="cursor-label">{t.projects.viewProject}</span>
+      </div>
       <div ref={arrowRef} aria-hidden className="cursor-arrow">
         <svg viewBox="0 0 24 24" fill="none">
           <path

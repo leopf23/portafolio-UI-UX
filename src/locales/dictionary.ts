@@ -6,7 +6,7 @@ export type ServiceEntry = { title: string; description: [string, string] };
 export type JobEntry = { period: string; role: string; company: string; description: string };
 export type SkillTag = { label: string; active: boolean };
 export type SkillBreakdownEntry = { name: string; description: [string, string]; tags: SkillTag[] };
-export type ProjectEntry = { category: string; title: string; description: string; tags: string[] };
+export type ProjectEntry = { category: string; title: string; description: string; tags: string[]; link: string };
 
 export type Dictionary = {
   nav: {
@@ -85,6 +85,7 @@ export type Dictionary = {
     headingAccent: string;
     headingTrail: string;
     viewAll: string;
+    viewProject: string;
     items: ProjectEntry[];
   };
   contact: {
@@ -279,24 +280,28 @@ export const dictionary: Record<Locale, Dictionary> = {
       headingAccent: "Featured",
       headingTrail: "Projects",
       viewAll: "View all",
+      viewProject: "View project",
       items: [
         {
-          category: "BRAND",
-          title: "Constella Identity",
-          description: "Mark, type, and motion system for a developer tools startup.",
-          tags: ["Branding", "Motion"],
+          category: "PHARMA · MOBILE",
+          title: "Design Pharmacy",
+          description: "Mobile UX/UI app design for fast, intuitive pharmacy orders.",
+          tags: ["UX/UI Design", "React Native"],
+          link: "https://www.behance.net/gallery/218593341/Design-Pharmacy-UXUI",
         },
         {
-          category: "TRAVEL · MOBILE",
-          title: "Wayward",
-          description: "Itinerary-first travel companion for slow travelers.",
-          tags: ["React Native", "Mapbox"],
+          category: "BILLING · MOBILE",
+          title: "Palma",
+          description: "Mobile UX/UI app design for fast micro-business invoicing.",
+          tags: ["UX/UI Design", "Figma"],
+          link: "https://www.behance.net/gallery/255776793/APP-Pamla-(Diseno-UIUX)",
         },
         {
-          category: "TRAVEL · MOBILE",
-          title: "Wayward",
-          description: "Itinerary-first travel companion for slow travelers.",
-          tags: ["React Native", "Mapbox"],
+          category: "E-COMMERCE · WEB",
+          title: "MarketShopes",
+          description: "Responsive e-commerce UI/UX and front-end for sales management.",
+          tags: ["React", "Tailwind CSS"],
+          link: "https://www.behance.net/gallery/218592993/UIUX-E-commerce",
         },
       ],
     },
@@ -494,24 +499,28 @@ export const dictionary: Record<Locale, Dictionary> = {
       headingAccent: "Selección",
       headingTrail: "de Proyectos",
       viewAll: "Ver todos",
+      viewProject: "Ver proyecto",
       items: [
         {
-          category: "MARCA",
-          title: "Constella Identity",
-          description: "Sistema de marca, tipografía y motion para una startup de herramientas para desarrolladores.",
-          tags: ["Branding", "Motion"],
+          category: "FARMACIA · MÓVIL",
+          title: "Design Pharmacy",
+          description: "Diseño UX/UI de una app móvil intuitiva para pedidos rápidos en el sector farmacéutico.",
+          tags: ["Diseño UX/UI", "React Native"],
+          link: "https://www.behance.net/gallery/218593341/Design-Pharmacy-UXUI",
         },
         {
-          category: "VIAJES · MÓVIL",
-          title: "Wayward",
-          description: "Compañero de viaje enfocado en itinerarios, para viajeros que van con calma.",
-          tags: ["React Native", "Mapbox"],
+          category: "FACTURACIÓN · MÓVIL",
+          title: "Palma",
+          description: "Diseño UX/UI de una app móvil para facturación rápida en microempresas.",
+          tags: ["Diseño UX/UI", "Figma"],
+          link: "https://www.behance.net/gallery/255776793/APP-Pamla-(Diseno-UIUX)",
         },
         {
-          category: "VIAJES · MÓVIL",
-          title: "Wayward",
-          description: "Compañero de viaje enfocado en itinerarios, para viajeros que van con calma.",
-          tags: ["React Native", "Mapbox"],
+          category: "E-COMMERCE · WEB",
+          title: "MarketShopes",
+          description: "E-commerce responsivo con UI/UX y front-end para gestión de ventas.",
+          tags: ["React", "Tailwind CSS"],
+          link: "https://www.behance.net/gallery/218592993/UIUX-E-commerce",
         },
       ],
     },

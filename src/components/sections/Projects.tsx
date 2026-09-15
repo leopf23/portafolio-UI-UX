@@ -2,7 +2,7 @@
 
 import { useLocale } from "@/context/LocaleContext";
 
-const images = ["/images/project-constella.png", "/images/project-wayward.png", "/images/project-wayward.png"];
+const images = ["/images/project-pharmacy.png", "/images/project-pamla.jpg", "/images/project-marketshopes.jpg"];
 
 function ProjectCard({
   image,
@@ -10,15 +10,23 @@ function ProjectCard({
   title,
   description,
   tags,
+  link,
 }: {
   image: string;
   category: string;
   title: string;
   description: string;
   tags: string[];
+  link: string;
 }) {
   return (
-    <div className="bg-[var(--c-surface)] border border-[var(--c-border)] border-solid content-stretch flex flex-col items-start relative rounded-[20px] shrink-0 w-full overflow-hidden">
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cursor="view"
+      className="bg-[var(--c-surface)] border border-[var(--c-border)] border-solid content-stretch flex flex-col items-start relative rounded-[20px] shrink-0 w-full overflow-hidden cursor-pointer shadow-[0px_0px_0px_0px_rgba(124,58,237,0)] transition-shadow duration-300 ease-out hover:shadow-[0px_20px_60px_-15px_rgba(124,58,237,0.35)]"
+    >
       <div className="relative shrink-0 w-full">
         <div className="h-[245px] relative shrink-0 w-full overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -63,7 +71,7 @@ function ProjectCard({
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -94,7 +102,9 @@ export default function Projects() {
               </div>
             </div>
             <a
-              href="#projects"
+              href="https://www.behance.net/leonardoperez1"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border border-[var(--c-border-strong)] border-solid content-stretch flex gap-[8px] items-center justify-center px-[17px] py-[9px] rounded-[16777200px] shrink-0"
             >
               <div className="[word-break:break-word] flex flex-col font-sans font-normal justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-[var(--c-ink)] whitespace-nowrap">
@@ -115,6 +125,7 @@ export default function Projects() {
                 title={project.title}
                 description={project.description}
                 tags={project.tags}
+                link={project.link}
               />
             ))}
           </div>
