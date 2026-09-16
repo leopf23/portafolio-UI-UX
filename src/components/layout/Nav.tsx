@@ -20,12 +20,12 @@ export default function Nav() {
 
   return (
     <header className="top-0 z-50 fixed inset-x-0 flex flex-col items-start px-[16px] sm:px-[24px] lg:px-[140px] py-[12px] w-full">
-      <div className="relative flex items-center content-stretch gap-[16px] bg-[var(--c-nav-glass)] shadow-[0px_30px_80px_-30px_rgba(0,0,0,0.6)] backdrop-blur-[8px] px-[16px] sm:px-[21px] py-[11px] border border-[var(--c-border)] border-solid rounded-[24px] sm:rounded-[16777200px] w-full shrink-0">
-        <a href="#" className="relative shrink-0" onClick={() => setOpen(false)}>
-          <div className="relative flex items-center content-stretch gap-[10px] bg-clip-padding border-[transparent] border-0 border-solid size-full">    
-            <div className="relative flex flex-col items-start content-stretch shrink-0">
-              <div className="relative flex flex-col justify-center font-sans font-medium text-[14px] text-[var(--c-ink)] not-italic leading-[0] tracking-[-0.35px] whitespace-nowrap [word-break:break-word] shrink-0">
-                <p>
+      <div className="relative flex items-center content-stretch gap-[8px] sm:gap-[16px] bg-[var(--c-nav-glass)] shadow-[0px_30px_80px_-30px_rgba(0,0,0,0.6)] backdrop-blur-[8px] px-[12px] sm:px-[21px] py-[11px] border border-[var(--c-border)] border-solid rounded-[24px] sm:rounded-[16777200px] w-full shrink-0">
+        <a href="#" className="relative min-w-0" onClick={() => setOpen(false)}>
+          <div className="relative flex items-center content-stretch gap-[10px] bg-clip-padding border-[transparent] border-0 border-solid size-full">
+            <div className="relative flex flex-col items-start content-stretch min-w-0">
+              <div className="relative flex flex-col justify-center font-sans font-medium text-[14px] text-[var(--c-ink)] not-italic leading-[0] tracking-[-0.35px] truncate [word-break:break-word] min-w-0 max-w-full">
+                <p className="truncate">
                   <span className="leading-[20px]">Leonardo</span>
                   <span className="font-sans font-medium text-[var(--c-ink-muted)] not-italic leading-[20px]"> Perez Figueroa</span>
                 </p>
@@ -52,7 +52,9 @@ export default function Nav() {
           <LanguageDropdown />
 
           <a
-            href="#contact"
+            href="https://www.behance.net/leonardoperez1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden relative sm:flex bg-[var(--c-cta-bg)] rounded-[16777200px] shrink-0"
           >
             <div className="relative flex items-center content-stretch gap-[8px] bg-clip-padding px-[16px] py-[8px] border-[transparent] border-0 border-solid size-full">
@@ -100,7 +102,9 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://www.behance.net/leonardoperez1"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="flex justify-center items-center gap-[8px] bg-[var(--c-cta-bg)] mt-[4px] px-[16px] py-[10px] rounded-[12px]"
           >

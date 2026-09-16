@@ -70,13 +70,13 @@ export default function Contact() {
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="bg-[var(--c-surface)] border border-[var(--c-border)] border-solid content-stretch flex items-center justify-between gap-[16px] px-[21px] py-[17px] relative rounded-[16px] shrink-0 w-full"
               >
-                <div className="relative shrink-0 min-w-0">
+                <div className="relative min-w-0 flex-1">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
                     <div className="relative shrink-0 size-[16px]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img alt="" className="absolute block inset-0 max-w-none size-full light:invert" src={link.icon} />
                     </div>
-                    <div className="content-stretch flex flex-col items-start relative shrink-0 min-w-0">
+                    <div className="content-stretch flex flex-col items-start relative min-w-0 flex-1">
                       <div className="[word-break:break-word] flex flex-col font-sans font-normal justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-[var(--c-ink)] truncate w-full">
                         <p className="leading-[20px] truncate">{link.label}</p>
                       </div>
